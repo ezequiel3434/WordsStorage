@@ -15,6 +15,20 @@ class TableViewController: UITableViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //A
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        let managedContext = appDelegate!.persistentContainer.viewContext
+        
+        //B
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "List")
+        
+        //C
+        do {
+            managedObjects = try managedContext.fetch(fetchRequest)
+        } catch let error as NSError {
+            print("No se puede recuperar los datos guardados. El error fue: \(error), \(error.userInfo)")
+        }
 
        
     }
@@ -77,7 +91,14 @@ class TableViewController: UITableViewController {
         let entity = NSEntityDescription.entity(forEntityName: "List", in: managedContext)!
         let managedObject = NSManagedObject(entity: entity, insertInto: managedContext)
         
-        managedObject.setValue(word, forKeyPath: word)
+        managedObject.setValue(word, forKeyPath: "word")
+        
+        do {
+            try managedContext.save()
+            managedObjects.append(managedObject)
+        } catch let error as NSError {
+            print("No se pudo guardar, error: \(error), \(error.userInfo)")
+        }
         
     }
     
