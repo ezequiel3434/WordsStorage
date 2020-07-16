@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import CoreData
 
 class TableViewController: UITableViewController {
     
-    var wordsTable: [String] = ["Ezequiel", "ALexis", "Karen"]
-
+    var managedObjects: [NSManagedObject] = []
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,15 +28,18 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return wordsTable.count
+        return managedObjects.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text = wordsTable[indexPath.row]
+        let managedObject = managedObjects[indexPath.row]
+        
+        cell.textLabel?.text = managedObject.value(forKey: "word") as? String
 
+        
         return cell
     }
     
@@ -45,7 +49,7 @@ class TableViewController: UITableViewController {
         
         let save = UIAlertAction(title: "Add", style: .default) { (UIAlertAction) in
             let textField = alert.textFields!.first
-            self.wordsTable.append(textField!.text!)
+            self.saveWord(word: textField!.text!)
             
             self.tableView.reloadData()
         }
@@ -62,6 +66,18 @@ class TableViewController: UITableViewController {
         alert.addAction(cancel)
         
         present(alert,animated: true, completion: nil)
+        
+    }
+    func saveWord(word: String) {
+        
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
+        let managedContext = appDelegate!.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "List", in: managedContext)!
+        let managedObject = NSManagedObject(entity: entity, insertInto: managedContext)
+        
+        managedObject.setValue(word, forKeyPath: word)
         
     }
     
