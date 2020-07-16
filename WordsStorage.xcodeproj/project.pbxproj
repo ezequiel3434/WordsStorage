@@ -14,6 +14,7 @@
 		378EDCEA24C0DBD000A604E7 /* WordsStorage.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 378EDCE824C0DBD000A604E7 /* WordsStorage.xcdatamodeld */; };
 		378EDCEC24C0DBD100A604E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 378EDCEB24C0DBD100A604E7 /* Assets.xcassets */; };
 		378EDCEF24C0DBD100A604E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 378EDCED24C0DBD100A604E7 /* LaunchScreen.storyboard */; };
+		378EDCF724C0DE3000A604E7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 378EDCF624C0DE3000A604E7 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		378EDCEB24C0DBD100A604E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		378EDCEE24C0DBD100A604E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		378EDCF024C0DBD100A604E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		378EDCF624C0DE3000A604E7 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				378EDCDF24C0DBD000A604E7 /* AppDelegate.swift */,
 				378EDCE124C0DBD000A604E7 /* SceneDelegate.swift */,
 				378EDCE324C0DBD000A604E7 /* ViewController.swift */,
+				378EDCF624C0DE3000A604E7 /* TableViewController.swift */,
 				378EDCE524C0DBD000A604E7 /* Main.storyboard */,
 				378EDCEB24C0DBD100A604E7 /* Assets.xcassets */,
 				378EDCED24C0DBD100A604E7 /* LaunchScreen.storyboard */,
@@ -144,6 +147,7 @@
 				378EDCE424C0DBD000A604E7 /* ViewController.swift in Sources */,
 				378EDCEA24C0DBD000A604E7 /* WordsStorage.xcdatamodeld in Sources */,
 				378EDCE024C0DBD000A604E7 /* AppDelegate.swift in Sources */,
+				378EDCF724C0DE3000A604E7 /* TableViewController.swift in Sources */,
 				378EDCE224C0DBD000A604E7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
