@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="1042.0289855072465" y="138.61607142857142"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Add words-->
         <scene sceneID="Ibj-kE-fLx">
             <objects>
                 <tableViewController id="Yjy-gS-Rwg" customClass="TableViewController" customModule="WordsStorage" customModuleProvider="target" sceneMemberID="viewController">
@@ -65,7 +65,13 @@
                             <outlet property="delegate" destination="Yjy-gS-Rwg" id="Ofn-BA-6eV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="cwx-5M-zRb"/>
+                    <navigationItem key="navigationItem" title="Add words" id="cwx-5M-zRb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="uSu-sj-n2S">
+                            <connections>
+                                <action selector="addiWord:" destination="Yjy-gS-Rwg" id="e0d-Xm-O2d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wou-Pw-NNd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

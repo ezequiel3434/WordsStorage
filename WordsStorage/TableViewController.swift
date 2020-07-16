@@ -15,11 +15,7 @@ class TableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+       
     }
 
     // MARK: - Table view data source
@@ -43,6 +39,31 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-
+    @IBAction func addiWord(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "New word", message: "Please Add a new word", preferredStyle: .alert)
+        
+        let save = UIAlertAction(title: "Add", style: .default) { (UIAlertAction) in
+            let textField = alert.textFields!.first
+            self.wordsTable.append(textField!.text!)
+            
+            self.tableView.reloadData()
+        }
+        
+        let cancel = UIAlertAction(title: "Cancel", style: .default) { (UIAlertAction) in
+            
+        }
+        
+        alert.addTextField { (UITextField) in
+            
+        }
+        
+        alert.addAction(save)
+        alert.addAction(cancel)
+        
+        present(alert,animated: true, completion: nil)
+        
+    }
+    
    
 }
